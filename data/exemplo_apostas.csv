@@ -1,0 +1,26 @@
+data,hora,plataforma,tipo,valor_apostado,valor_retorno,resultado
+2026-08-01,14:22,7K Bet,esporte,20.00,0.00,perdeu
+2026-08-01,15:10,7K Bet,esporte,15.00,32.50,ganhou
+2026-08-01,19:45,7Games,crash,10.00,0.00,perdeu
+2026-08-01,20:05,7Games,crash,10.00,27.00,ganhou
+2026-08-02,11:30,7K Bet,esporte,25.00,0.00,perdeu
+2026-08-02,16:00,7Games,crash,5.00,18.50,ganhou
+2026-08-02,21:15,7K Bet,esporte,30.00,55.00,ganhou
+2026-08-03,13:40,7Games,crash,15.00,0.00,perdeu
+2026-08-03,18:20,7K Bet,esporte,20.00,0.00,perdeu
+2026-08-03,22:10,7Games,crash,10.00,42.00,ganhou
+2026-08-04,10:05,7K Bet,esporte,40.00,78.00,ganhou
+2026-08-04,14:55,7Games,crash,8.00,0.00,perdeu
+2026-08-04,20:30,7K Bet,esporte,15.00,0.00,perdeu
+2026-08-05,12:15,7Games,crash,12.00,31.20,ganhou
+2026-08-05,17:45,7K Bet,esporte,25.00,48.00,ganhou
+2026-08-05,23:00,7Games,crash,20.00,0.00,perdeu
+2026-08-06,09:30,7K Bet,esporte,10.00,22.00,ganhou
+2026-08-06,15:20,7Games,crash,15.00,0.00,perdeu
+2026-08-06,19:50,7K Bet,esporte,30.00,0.00,perdeu
+2026-08-07,11:00,7Games,crash,10.00,35.00,ganhou
+2026-08-07,16:40,7K Bet,esporte,20.00,41.00,ganhou
+2026-08-07,21:25,7Games,crash,25.00,0.00,perdeu
+2026-08-08,13:10,7K Bet,esporte,15.00,0.00,perdeu
+2026-08-08,18:00,7Games,crash,10.00,28.00,ganhou
+2026-08-08,22:45,7K Bet,esporte,50.00,95.00,ganhou
