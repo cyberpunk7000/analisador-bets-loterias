@@ -9,30 +9,59 @@ import plotly.express as px
 import plotly.graph_objects as go
 from pathlib import Path
 import sys
+import os
 
-sys.path.append(str(Path(__file__).parent / "src"))
+# Corrige o caminho para funcionar no Streamlit Cloud
+ROOT_DIR = Path(__file__).parent
+SRC_DIR = ROOT_DIR / "src"
+sys.path.insert(0, str(SRC_DIR))
+sys.path.insert(0, str(ROOT_DIR))
 
-from betting_analyzer import (
-    load_bets,
-    summary_by_hour,
-    summary_by_weekday,
-    summary_by_platform,
-    summary_by_type,
-    consecutive_results,
-    overall_stats,
-    best_times_to_bet,
-    suggest_stake,
-    stake_by_hour,
-)
-from lottery_analyzer import (
-    load_mega_sena,
-    load_lotofacil,
-    frequency_analysis,
-    delay_analysis,
-    even_odd_stats,
-    sum_stats,
-    generate_games,
-)
+try:
+    from betting_analyzer import (
+        load_bets,
+        summary_by_hour,
+        summary_by_weekday,
+        summary_by_platform,
+        summary_by_type,
+        consecutive_results,
+        overall_stats,
+        best_times_to_bet,
+        suggest_stake,
+        stake_by_hour,
+    )
+    from lottery_analyzer import (
+        load_mega_sena,
+        load_lotofacil,
+        frequency_analysis,
+        delay_analysis,
+        even_odd_stats,
+        sum_stats,
+        generate_games,
+    )
+except ModuleNotFoundError:
+    # Tentativa alternativa caso a estrutura de pastas seja diferente
+    from src.betting_analyzer import (
+        load_bets,
+        summary_by_hour,
+        summary_by_weekday,
+        summary_by_platform,
+        summary_by_type,
+        consecutive_results,
+        overall_stats,
+        best_times_to_bet,
+        suggest_stake,
+        stake_by_hour,
+    )
+    from src.lottery_analyzer import (
+        load_mega_sena,
+        load_lotofacil,
+        frequency_analysis,
+        delay_analysis,
+        even_odd_stats,
+        sum_stats,
+        generate_games,
+    )
 
 st.set_page_config(
     page_title="Analisador Bets + Loterias",
@@ -71,7 +100,8 @@ with tab1:
     if uploaded_bets is not None:
         df_bets = load_bets(uploaded_bets)
     elif use_example:
-        df_bets = load_bets("data/exemplo_apostas.csv")
+        exemplo_path = ROOT_DIR / "data" / "exemplo_apostas.csv"
+        df_bets = load_bets(str(exemplo_path))
     else:
         df_bets = None
 
@@ -181,7 +211,8 @@ with tab2:
     if uploaded_mega is not None:
         df_mega = load_mega_sena(uploaded_mega)
     elif use_mega_example:
-        df_mega = load_mega_sena("data/exemplo_megasena.csv")
+        exemplo_path = ROOT_DIR / "data" / "exemplo_megasena.csv"
+        df_mega = load_mega_sena(str(exemplo_path))
     else:
         df_mega = None
 
@@ -255,7 +286,8 @@ with tab3:
     if uploaded_loto is not None:
         df_loto = load_lotofacil(uploaded_loto)
     elif use_loto_example:
-        df_loto = load_lotofacil("data/exemplo_lotofacil.csv")
+        exemplo_path = ROOT_DIR / "data" / "exemplo_lotofacil.csv"
+        df_loto = load_lotofacil(str(exemplo_path))
     else:
         df_loto = None
 
